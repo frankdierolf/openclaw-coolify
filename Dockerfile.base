@@ -19,6 +19,7 @@ RUN corepack enable
 WORKDIR /openclaw
 
 ARG OPENCLAW_GIT_REF=feat/campfire-plugin
+ARG CACHE_BUST=0
 RUN git clone --depth 1 --branch "${OPENCLAW_GIT_REF}" https://github.com/frankdierolf/openclaw.git .
 
 # Patch: relax hard version pins (>=X.Y.Z) so pnpm can resolve from the
